@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+// import defaultTheme from 'tailwindcss/defaultTheme'; // Not strictly needed if var(--font-sans) has fallbacks
 
 export default {
 	darkMode: ["class"],
@@ -64,9 +65,13 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: 'var(--radius)', // 0.5rem (8px)
+				md: 'calc(var(--radius) - 2px)', // 6px
+				sm: 'calc(var(--radius) - 4px)'  // 4px
+			},
+			fontFamily: {
+        // sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans], // Use this if you import defaultTheme
+        sans: 'var(--font-sans)', // Simpler: assumes --font-sans CSS var includes fallbacks
 			},
 			keyframes: {
 				'accordion-down': {
